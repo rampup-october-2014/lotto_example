@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <%= erb :links %>
+    <p>How many numbers would you like?</p>
+    <form id="lotto_form">
+      <select name="numbers" form="lotto_form" >
+        <% (1..20).each do |number| %>
+          <option value="<%= number %>" <%= "selected=#{@how_many.humanize}" if @how_many == number %> >
+            <%= number.humanize %>
+          </option>
+        <% end %>
+      </select>
+
+      <input type="submit" value="Submit">
+    </form>
+    <% if @numbers.length > 0 %>
+      <p>Your numbers are: <%= @numbers.join(", ") %></p>
+    <% end %>
+  </body>
+</html>

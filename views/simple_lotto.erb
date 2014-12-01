@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <%= erb :links %>
+    <p>How many numbers would you like?</p>
+    <form id="lotto_form">
+      <select name="numbers" form="lotto_form">
+        <option value="1"> One </option>
+        <option value="2"> Two </option>
+        <option value="3"> Three </option>
+        <option value="4"> Four </option>
+        <option value="5"> Five </option>
+        <option value="6"> Six </option>
+        <option value="7"> Seven </option>
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+
+    <% if @numbers.length > 0 %>
+      <p>Your numbers are: <%= @numbers.join(", ") %></p>
+    <% end %>
+  </body>
+</html>

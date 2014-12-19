@@ -41,3 +41,9 @@ get '/better_lotto' do
 
   erb :better_lotto
 end
+
+get '/routing_info' do
+  @request_info = request.env
+
+  erb :routing_info
+end
